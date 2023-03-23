@@ -1,0 +1,315 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f6f8fa;
+  font-family: 'proxima';
+}
+
+@font-face {
+  font-family: "proxima";
+  src: url("../assets/Fonts/ProximaNova/ProximaNova-Regular.ttf");
+}
+
+hr {
+  width: 80%;
+}
+
+#three {
+  position: fixed;
+  margin-left: 33vw;
+  width: 65vw;
+  height: 90vh;
+  margin-top: 5vh;
+  margin-bottom: 15vh;
+  border-color: #000000;
+  border-style: solid;
+  border-width: 1px;
+}
+
+#OptionsContainer {
+  position: fixed;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 31vw;
+  height: 90vh;
+  background-color: #ffffff;
+  margin-left: 1vw;
+  margin-top: 5vh;
+  border-color: #000000;
+  border-width: 1px;
+  border-style: solid;
+  text-align: center;
+}
+
+.heading {
+  color: #58585a;
+  font-size: 25px;
+  display: block;
+  width: 100%;
+  margin-top: 1vh;
+  margin-bottom: 2vh;
+}
+
+#OptionsShapes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  margin-bottom: 2vh;
+  overflow-y: auto;
+  height: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#OptionsShapes::-webkit-scrollbar {
+  display: none;
+}
+
+#OptionsShapes div {
+  display: inline-block;
+  color: #58585a;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#OptionsShapes img {
+  height: 90px;
+  display: block;
+  margin: auto;
+}
+
+.Options {
+  overflow-y: auto;
+  height: auto;
+  margin-top: 15vh;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.Options::-webkit-scrollbar {
+  display: none;
+}
+
+#OptionsColor {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  margin-bottom: 5vh;
+  padding-top: 1vh;
+}
+
+#OptionsColor div {
+  display: inline-block;
+  color: #58585a;
+  font-size: small;
+
+}
+
+#OptionsColor .circle {
+  margin-top: 1vh !important;
+  margin-bottom: 1vh !important;
+  height: 50px;
+  width: 50px;
+  display: block;
+  margin: auto;
+  background-color: #000000;
+  border-radius: 50%;
+}
+
+.gold {
+  background-image: linear-gradient(180deg, #FFF6E2 40%, #E0B759 100%)
+}
+
+.platinum {
+  background-image: linear-gradient(180deg, #fff 40%, #e5e4e2 100%)
+}
+
+.roseGold {
+  background-image: linear-gradient(180deg, #FFF1EA 40%, #FFBB95 100%)
+}
+
+
+#Options li {
+  display: inline;
+  margin-top: 10px;
+  border-color: #000000;
+  border-style: solid;
+  height: 40px;
+  cursor: pointer;
+  color: #58585a;
+  background-color: #ffffff;
+  border-radius: 0px;
+  border-width: 0px;
+  line-height: 40px;
+  font-size: 15px;
+  padding-bottom: 40px;
+  width: 9vw;
+}
+
+#Options img {
+  display: block;
+}
+
+.lineHeight {
+  line-height: 40px;
+  vertical-align: top;
+}
+
+#Options li:hover {
+  background-color: #ffffff;
+  border-color: #b5c7d6;
+}
+
+.link {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
+
+.selected {
+
+  font-size: 15px;
+  display: block;
+  text-align: center;
+  padding-left: 6%;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.rightButtonsTop {
+  position: fixed;
+  display: block;
+  right: 2vw;
+  top: 5vh;
+  height: 20vh;
+  width: 25vw;
+}
+
+.rightButtonsTop .heading {
+  text-align: center;
+  margin-bottom: 0px;
+  font-size: medium;
+  font-weight: 500;
+}
+
+.rightButtonsTop #OptionsColor {
+  margin-top: 0px;
+}
+
+.rightButtonsBottom {
+  position: fixed;
+  display: block;
+  right: 3vw;
+  bottom: 5vh;
+  height: 20vh;
+  width: 6vw;
+}
+
+.rightButtonsBottom .heading {
+  text-align: center;
+  margin-bottom: 0px;
+  font-size: medium;
+  font-weight: 500;
+}
+
+.rightButtonsBottom #OptionsColor {
+  margin-top: 0px;
+  margin-left: 2px;
+}
+
+.rightButtonsBottomExpanded {
+  position: fixed;
+  display: block;
+  right: 2vw;
+  bottom: 5vh;
+  height: 20vh;
+  width: 25vw;
+}
+
+.rightButtonsBottomExpanded .heading {
+  text-align: center;
+  margin-bottom: 0px;
+  font-size: medium;
+  font-weight: 500;
+}
+
+.rightButtonsBottomExpanded #OptionsColor {
+  margin-top: 0px;
+}
+
+.progressbar {
+  height: 15vh;
+  width: 30vw;
+  position: absolute;
+  font-size: xx-small;
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 3px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.progressCircle {
+  background-color: #b5c7d6;
+  border-radius: 50%;
+  height: 2vw;
+  line-height: 2vw;
+  width: 2vw;
+  vertical-align: middle;
+  display: block;
+  margin: auto;
+}
+
+.progressStep {
+  display: inline-block;
+  flex: 0 0 3vw;
+  cursor: pointer;
+}
+
+.progressStepCircle {
+  display: inline;
+}
+
+.progressDash {
+  /* position: relative;
+    border-color: #000000;
+    display: inline-block;
+    margin-top: 2vh;
+    margin-left: 1px;
+    margin-right: 1px;
+    height: 2px;
+    width: 5px;
+    background-color: #b5c7d6;
+    vertical-align: middle;
+    line-height: 5vh; */
+}
+
+.progressStepName {
+  height: 40px;
+  display: table-cell;
+  vertical-align: bottom;
+  text-align: center;
+  width: 3vw;
+}
