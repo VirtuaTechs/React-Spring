@@ -3,21 +3,32 @@ import RecipeFactory from '../Factories/RecipeFactory';
 import RecipeRepository from '../Data/RecipeRepository';
 import Recipe from '../Recipe/Recipe'
 import { Any } from '@react-spring/web';
+import { EnumType } from 'typescript';
+
+enum storage {
+	local,
+	remote
+}
 
 class DataManager{
-	private recipeRepository: RecipeRepository;
 
-	constructor(recipeRepository: RecipeRepository) {
-		this.recipeRepository = recipeRepository;
+	constructor() {
 	}
 
-	async initData() {
-		const data = await DataFactory.initData();
-		this.recipeRepository.storeData(data);
+	static async fetchData(path: string, method: storage) {
+
+		let recipe = new Recipe();
+		if(method === storage.local)
+			recipe = await DataFactory.fetchDatafromLocal(path);
+		else if(method === storage.remote)
+			recipe = await DataFactory.fetchDatafromRemote(path, '');
+
+		RecipeRepository.addRecipe(recipe);
 	}
 
-	async storeData(data: Recipe) {
-		await DataFactory.storeData(data);
+	static async storeData(data: Recipe) {
+		//Validate recipe
+		RecipeRepository.addRecipe(data);
 	}
 
 	getRecipe(recipeID: string) {
@@ -25,7 +36,7 @@ class DataManager{
 	}
 
 	getAllRecipes() {
-		return this.recipeRepository.getAllRecipes();
+		return RecipeRepository.getAllRecipes();
 	}
 }
 
