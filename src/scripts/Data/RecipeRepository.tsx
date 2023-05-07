@@ -17,6 +17,8 @@ class RecipeRepository{
 
 	static getRecipeByID(ID: string) {
 		//Return recipe after checking for ID and returning the particular recipe
+		const recipe = new Recipe();
+		return recipe;
 	}
 
 	static getAllRecipes() {

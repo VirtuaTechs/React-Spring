@@ -5,7 +5,7 @@ class RecipeCreator{
 
 	}
 
-	createRecipe(data:string) {
+	static createRecipe(data:string) {
 		const recipe = new Recipe();
 		//Create recipe object from rawData
 		return recipe;

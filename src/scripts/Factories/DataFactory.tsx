@@ -1,5 +1,6 @@
 import LocalData  from "../API/LocalData";
 import RemoteData from "../API/RemoteData";
+import RecipeRepository from "../Data/RecipeRepository";
 //import WebScraper from "../API/WebScraper"; -- Can be added later
 import RecipeCreator from "../Recipe/RecipeCreator";
 
@@ -36,6 +37,10 @@ class DataFactory{
 
 		//Validate recipe
 		return recipe;
+	}
+
+	static getRecipe( recipeID: string) {
+		RecipeRepository.getRecipeByID(recipeID);
 	}
 
 }

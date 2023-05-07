@@ -1185,7 +1185,7 @@ export class Main extends React.Component<{}, any> {
         //console.log(this.state);
         const nextStep = this.GetNextStep();
         const showing = this.state.colorsTab;
-        const steps = this.CreateSteps();
+        const Step = this.CreateSteps();
         const selectedColor = this.GetColor();
 
         return (
@@ -1195,7 +1195,7 @@ export class Main extends React.Component<{}, any> {
                 </div>
                 <div id='OptionsContainer'>
                     <span className='heading'>Your Journey</span>
-                    {steps}
+                    {Step}
                     {nextStep}
                     {/* <hr />
                     <span className='heading'>Select your Metal</span>

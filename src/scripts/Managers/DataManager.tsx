@@ -31,11 +31,11 @@ class DataManager{
 		RecipeRepository.addRecipe(data);
 	}
 
-	getRecipe(recipeID: string) {
-		return RecipeFactory.getRecipe(recipeID);
+	static getRecipe(recipeID: string) {
+		return RecipeRepository.getRecipeByID(recipeID);
 	}
 
-	getAllRecipes() {
+	static getAllRecipes() {
 		return RecipeRepository.getAllRecipes();
 	}
 }
