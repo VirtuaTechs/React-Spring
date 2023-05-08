@@ -1,9 +1,9 @@
 import Interactable from "../Interactable";
 
-class Ingredients extends Interactable{
+class Utensil extends Interactable{
 	constructor() {
 		super();
 	}
 }
 
-export default Ingredients;
+export default Utensil;

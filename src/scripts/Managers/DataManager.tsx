@@ -2,7 +2,6 @@ import DataFactory from '../Factories/DataFactory';
 import RecipeFactory from '../Factories/RecipeFactory';
 import RecipeRepository from '../Data/RecipeRepository';
 import Recipe from '../Recipe/Recipe'
-import { Any } from '@react-spring/web';
 import { EnumType } from 'typescript';
 
 enum storage {
@@ -12,31 +11,38 @@ enum storage {
 
 class DataManager{
 
-	constructor() {
+	private static instance: DataManager;
+
+	private constructor() {
 	}
 
-	static async fetchData(path: string, method: storage) {
+	static getInstance() {
+		if(!DataManager.instance) DataManager.instance = new DataManager();
+		return DataManager.instance;
+	}
+
+	async fetchData(path: string, method: storage) {
 
 		let recipe = new Recipe();
 		if(method === storage.local)
-			recipe = await DataFactory.fetchDatafromLocal(path);
+			recipe = await DataFactory.getInstance().fetchDatafromLocal(path);
 		else if(method === storage.remote)
-			recipe = await DataFactory.fetchDatafromRemote(path, '');
+			recipe = await DataFactory.getInstance().fetchDatafromRemote(path, '');
 
-		RecipeRepository.addRecipe(recipe);
+		RecipeRepository.getInstance().addRecipe(recipe);
 	}
 
-	static async storeData(data: Recipe) {
+	async storeData(data: Recipe) {
 		//Validate recipe
-		RecipeRepository.addRecipe(data);
+		RecipeRepository.getInstance().addRecipe(data);
 	}
 
-	static getRecipe(recipeID: string) {
-		return RecipeRepository.getRecipeByID(recipeID);
+	getRecipe(recipeID: string) {
+		return RecipeRepository.getInstance().getRecipeByID(recipeID);
 	}
 
-	static getAllRecipes() {
-		return RecipeRepository.getAllRecipes();
+	getAllRecipes() {
+		return RecipeRepository.getInstance().getAllRecipes();
 	}
 }
 

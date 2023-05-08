@@ -7,36 +7,43 @@ import Authenticator from "../Utils/Authenticator";
 
 class RecipeManager{
 
-	private static selectedRecipe: Recipe;
+	private selectedRecipe: Recipe | undefined;
+	private static instance: RecipeManager;
 
-	constructor() {
-		RecipeManager.selectedRecipe = !null;
+	private constructor() {
+
 	}
 
-	static addRecipefromUser() {
+	static getInstance() {
+		if(!RecipeManager.instance) RecipeManager.instance = new RecipeManager();
+		return RecipeManager.instance;
+	}
+
+
+	addRecipefromUser() {
 		const rawData = UserInput.getRecipeDataFromUser();
 		
 		//Validate data from user
-		const recipe = RecipeCreator.createRecipe(rawData);
+		const recipe = RecipeCreator.getInstance().createRecipe(rawData);
 
 		//Validate Recipe
-		DataManager.storeData(recipe);
+		DataManager.getInstance().storeData(recipe);
 	}
 
-	static addRecipefromWebScraper() {
+	addRecipefromWebScraper() {
 		//Add option of using a web scraper to get recipe from any webpage
 	}
 
-	static authenticateRecipe(recipe:Recipe) {
+	authenticateRecipe(recipe:Recipe) {
 		return 
 	}
 
-	static selectRecipe( recipeID: string) {
-		const recipe = RecipeFactory.getRecipe(recipeID);
+	selectRecipe( recipeID: string) {
+		const recipe = RecipeFactory.getInstance().getRecipe(recipeID);
 		if(!Authenticator.authenticate(recipe))
 			return null; //Authenciation failed
 
-		RecipeManager.selectedRecipe = recipe;
+		this.selectedRecipe = recipe;
 	}
 
 }

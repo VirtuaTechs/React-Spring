@@ -1,11 +1,18 @@
 import Recipe from './Recipe'
 
 class RecipeCreator{
-	constructor() {
+	private static instance:RecipeCreator;
+
+	private constructor() {
 
 	}
 
-	static createRecipe(data:string) {
+	static getInstance() {
+		if(!RecipeCreator.instance) RecipeCreator.instance = new RecipeCreator();
+		return RecipeCreator.instance;
+	}
+
+	createRecipe(data:string) {
 		const recipe = new Recipe();
 		//Create recipe object from rawData
 		return recipe;

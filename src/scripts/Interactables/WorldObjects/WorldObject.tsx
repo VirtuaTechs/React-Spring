@@ -1,9 +1,11 @@
 import Interactable from "../Interactable";
 
-class Ingredients extends Interactable{
+class WorldObject extends Interactable{
+
 	constructor() {
 		super();
+		
 	}
 }
 
-export default Ingredients;
+export default WorldObject;

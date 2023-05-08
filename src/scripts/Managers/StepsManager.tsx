@@ -3,14 +3,21 @@ import Step from "../Steps/Step";
 
 class StepsManager {
 
-	private static Step: Step[];
-	constructor() {
-		StepsManager.Step = [];
+	private stepsList: Step[];
+	private static instance: StepsManager;
+
+	private constructor() {
+		this.stepsList = [];
 	}
 
-	static initRecipe(recipe: Recipe) {
-		//Create appropriate Step from the recipe
+	static getInstance() {
+		if(!StepsManager.instance) StepsManager.instance  = new StepsManager();
+		return StepsManager.instance;
+	}
 
+	initRecipe(recipe: Recipe) {
+		//Create appropriate Step from the recipe
+		return this.stepsList;
 	}
 
 	addStep(step: Step) {

@@ -1,8 +1,16 @@
 import Step from "./Step";
 
+enum type {
+	folded,
+	flat
+}
+
 class Serve extends Step{
-	constructor() {
+
+	private servingStyle: type;
+	constructor( servingStyle: type) {
 		super();
+		this.servingStyle = servingStyle;
 	}
 }
 

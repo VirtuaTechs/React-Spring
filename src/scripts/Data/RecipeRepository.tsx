@@ -1,28 +1,34 @@
 import Recipe from '../Recipe/Recipe'
 
 class RecipeRepository{
-	private static recipeList: Recipe[];
+	private recipeList: Recipe[];
+	private static instance: RecipeRepository;
 
-	constructor() {
-		RecipeRepository.recipeList = [];
+	private constructor() {
+		this.recipeList = [];
 	}
 
-	static addRecipe(recipe: Recipe) {
-		RecipeRepository.recipeList.push(recipe);
+	static getInstance() {
+		if(!RecipeRepository.instance) RecipeRepository.instance = new RecipeRepository();
+		return RecipeRepository.instance;
 	}
 
-	static removeRecipe(recipe:Recipe) {
+	addRecipe(recipe: Recipe) {
+		this.recipeList.push(recipe);
+	}
+
+	removeRecipe(recipe:Recipe) {
 		//Remove particular recipe from recipeList
 	}
 
-	static getRecipeByID(ID: string) {
+	getRecipeByID(ID: string) {
 		//Return recipe after checking for ID and returning the particular recipe
 		const recipe = new Recipe();
 		return recipe;
 	}
 
-	static getAllRecipes() {
-		return RecipeRepository.recipeList;
+	getAllRecipes() {
+		return this.recipeList;
 	}
 
 }

@@ -10,7 +10,7 @@ export class Main extends React.Component<{}, any> {
     render() {
         return (
             <div>
-              
+
             </div>
         );
     }

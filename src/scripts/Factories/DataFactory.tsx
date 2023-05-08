@@ -6,26 +6,32 @@ import RecipeCreator from "../Recipe/RecipeCreator";
 
 class DataFactory{
 
-	private static localData: LocalData;
-	private static remoteData: RemoteData;
+	private localData: LocalData;
+	private remoteData: RemoteData;
+	private static instance: DataFactory;
 	
-	constructor() {
-		DataFactory.localData = new LocalData();
-		DataFactory.remoteData = new RemoteData();
+	private constructor() {
+		this.localData = new LocalData();
+		this.remoteData = new RemoteData();
 	}
 
-	static fetchDatafromLocal(url:string) {
+	static getInstance() {
+		if(!DataFactory.instance) DataFactory.instance = new DataFactory();
+		return DataFactory.instance;
+	}
+
+	fetchDatafromLocal(url:string) {
 		//Validate path before calling method
 		const rawData = this.localData.loadDatafromPath(url);
 		
 		//Validate rawData before calling recipe creator
-		const recipe = RecipeCreator.createRecipe(rawData);
+		const recipe = RecipeCreator.getInstance().createRecipe(rawData);
 		
 		//Validate recipe
 		return recipe;
 	}
 
-	static fetchDatafromRemote(url:string, APIKey: string) {
+	fetchDatafromRemote(url:string, APIKey: string) {
 		//Authenticate access
 		this.remoteData.authenticateAccess(APIKey);	
 
@@ -33,14 +39,14 @@ class DataFactory{
 		const rawData = this.remoteData.loadDatafromPath(url);
 
 		//Validate rawData before calling recipe creator
-		const recipe = RecipeCreator.createRecipe(rawData);
+		const recipe = RecipeCreator.getInstance().createRecipe(rawData);
 
 		//Validate recipe
 		return recipe;
 	}
 
-	static getRecipe( recipeID: string) {
-		RecipeRepository.getRecipeByID(recipeID);
+	getRecipe( recipeID: string) {
+		RecipeRepository.getInstance().getRecipeByID(recipeID);
 	}
 
 }

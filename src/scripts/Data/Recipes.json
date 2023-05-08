@@ -1,1 +1,225 @@
-// Define a structure to represent recipe object in json format
+{
+	"name": "Recipe 1",
+	"type": "Omelet",
+	"id": "Om01",
+	"startingItems": [
+		{
+			"type": "cuttingTool",
+			"name": "knife",
+			"quantity": 1
+		},
+		{
+			"type": "cuttingTool",
+			"name": "chopper",
+			"quantity": 1
+		},
+		{
+			"type": "preparableItem",
+			"name": "onion",
+			"quantity": 1
+		},
+		{
+			"type": "preparableItem",
+			"name": "tomato",
+			"quantity": 1
+		},
+		{
+			"type": "container",
+			"name": "pan",
+			"quantity": 1
+		},
+		{
+			"type": "container",
+			"name": "bowl",
+			"quantity": 1
+		},
+		{
+			"type": "usableItem",
+			"name": "egg",
+			"quantity": 1
+		},
+		{
+			"type": "usableItem",
+			"name": "cheese",
+			"quantity": 1
+		},
+		{
+			"type": "condiment",
+			"name": "Salt",
+			"quantity": 1
+		},
+		{
+			"type": "condiment",
+			"name": "Pepper",
+			"quantity": 1
+		}
+	],
+	"steps": [
+		{
+			"id": "Om01S01",
+			"type": "cut",
+			"terminating": false,
+			"prereq": "",
+			"optional": false,
+			"skips": "",
+			"items": [
+				{
+					"type": "cuttingTool",
+					"name": "knife",
+					"quantity": 1
+				},
+				{
+					"type": "preparableItem",
+					"name": "onion",
+					"quantity": 1
+				}
+			],
+			"finalItem": {
+				"name": "DicedOnions",
+				"type": "usableItem",
+				"quantity": 1
+			}
+		},
+		{
+			"id": "Om01S02",
+			"type": "cut",
+			"terminating": false,
+			"prereq": "",
+			"optional": false,
+			"skips": "",
+			"items": [
+				{
+					"type": "cuttingTool",
+					"name": "chopper",
+					"quantity": 1
+				},
+				{
+					"type": "preparableItem",
+					"name": "tomato",
+					"quantity": 1
+				}
+			],
+			"finalItem": {
+				"name": "ChoppedTomatoes",
+				"type": "usableItem",
+				"quantity": 1	
+			}
+		},
+		{
+			"id": "Om01S03",
+			"type": "mix",
+			"terminating": false,
+			"prereq": "",
+			"optional": false,
+			"skips": "",
+			"items": [
+				{
+					"type": "container",
+					"name": "pan",
+					"quantity": 1
+				},
+				{
+					"type": "usableItem",
+					"name": "DicedOnions",
+					"quantity": 1
+				},
+				{
+					"type": "usableItem",
+					"name": "ChoppedTomatoes",
+					"quantity": 1
+				},
+				{
+					"type": "condiment",
+					"name": "Salt",
+					"quantity": 1
+				},
+				{
+					"type": "condiment",
+					"name": "Pepper",
+					"quantity": 1
+				},
+				{
+					"type": "usableItem",
+					"name": "Egg",
+					"quantity": 1
+				}
+			],
+			"finalItem": {
+				"name": "Mixture1",
+				"type": "usableItem",
+				"quantity": 1
+			}
+		},
+		{
+			"id": "Om01S04",
+			"type": "cook",
+			"terminating": false,
+			"prereq": "",
+			"optional": false,
+			"skips": "",
+			"items": [
+				{
+					"type": "world",
+					"name": "stove",
+					"quantity": 1
+				},
+				{
+					"type": "usableItem",
+					"name": "mixture1",
+					"quantity": 1
+				}
+			],
+			"finalItem":  {
+				"name": "Mixture2",
+				"type": "usableItem",
+				"quantity": 1	
+			}
+		},
+		{
+			"id": "Om01S05",
+			"type": "mix",
+			"terminating": false,
+			"prereq": "Om01S04",
+			"skips": "",
+			"optional": true,
+			"items": [
+				{
+					"type": "container",
+					"name": "pan",
+					"quantity": 1
+				},
+				{
+					"type": "usableItem",
+					"name": "cheese",
+					"quantity": 1
+				}
+			],
+			"finalItem":  {
+				"name": "Mixture3",
+				"type": "usableItem",
+				"quantity": 1	
+			}
+		},
+		{
+			"id": "Om01S06",
+			"type": "serve",
+			"terminating": true,
+			"prereq": "Om01S04",
+			"optional": false,
+			"skips": "Om01S05",
+			"items": [
+				{
+					"type": "usableItem",
+					"name": "Mixture2, Mixture3",
+					"quantity": 1
+				}
+			],
+			"finalItem":{
+				"name": "finalItem",
+				"type": "usableItem",
+				"quantity": 1
+			}
+		}
+	]
+  }
+  

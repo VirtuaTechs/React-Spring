@@ -1,12 +1,19 @@
 import DataManager from "../Managers/DataManager";
 
 class RecipeFactory {
-	constructor() {
+	private static instance: RecipeFactory; 
+
+	private constructor() {
 
 	}
 
-	static getRecipe(recipeID: string) {
-		return DataManager.getRecipe(recipeID);
+	static getInstance() {
+		if(!RecipeFactory.instance) RecipeFactory.instance = new RecipeFactory();
+		return RecipeFactory.instance;
+	}
+
+	getRecipe(recipeID: string) {
+		return DataManager.getInstance().getRecipe(recipeID);
 	}
 }
 
