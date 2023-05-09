@@ -1,10 +1,21 @@
 import Interactable from "../Interactables/Interactable";
 
-class Inventory{
+class Inventory {
 	private itemsAvaialble: Interactable[];
+	private static instance: Inventory;
 
-	constructor() {
+	private constructor() {
 		this.itemsAvaialble = [];
+	}
+
+	static getInstance() {
+		if (!Inventory.instance) Inventory.instance = new Inventory();
+		return Inventory.instance;
+	}
+
+
+	initItems(items: Interactable[]) {
+		this.itemsAvaialble = items;
 	}
 
 	getItem(itemID: string) {

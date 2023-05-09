@@ -1,4 +1,4 @@
-class RemoteData{
+class RemoteData {
 
 	private authenticatorKey: string;
 	constructor() {
@@ -9,11 +9,11 @@ class RemoteData{
 		//Set authenticator key after getting authentication from remote API
 	}
 
-	loadDatafromPath(url: string) {
+	fetchData(url: string) {
 		//Use authenticator key to establish connectino
 		// Load data from a path given in url
 		const string = '';
-		return string;	
+		return string;
 	}
 
 	writeDatatoPath(data: any, url: string) {

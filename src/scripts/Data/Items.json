@@ -1,0 +1,48 @@
+{
+    "items": [
+        {
+            "id": "Onion",
+            "type": "Ingredient"
+        },
+        {
+            "id": "Diced Onion",
+            "type": "Ingredient"
+        },
+        {
+            "id": "Tomato",
+            "type": "Ingredient"
+        },
+        {
+            "id": "Chopped Tomato",
+            "type": "Ingredient"
+        },
+        {
+            "id": "Egg",
+            "type": "Ingredient"
+        },
+        {
+            "id": "Cheese",
+            "type": "Ingredient"
+        },
+        {
+            "id": "Salt",
+            "type": "Ingredient"
+        },
+        {
+            "id": "Pepper",
+            "type": "Ingredient"
+        },
+        {
+            "id": "Knife",
+            "type": "Tool"
+        },
+        {
+            "id": "Stove",
+            "type": "WorldObject"
+        },
+        {
+            "id": "FryingPan",
+            "type": "Container"
+        }
+    ]
+}

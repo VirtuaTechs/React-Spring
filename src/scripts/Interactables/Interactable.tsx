@@ -1,4 +1,4 @@
-class Interactable{
+class Interactable {
 
 	private ID: string;
 
@@ -6,11 +6,7 @@ class Interactable{
 		this.ID = Date.now().toString();
 	}
 
-	setImage() {
-
-	}
-
-	setModel() {
+	onDrop() {
 
 	}
 

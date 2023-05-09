@@ -4,53 +4,35 @@
 	"id": "Om01",
 	"startingItems": [
 		{
-			"type": "cuttingTool",
-			"name": "knife",
+			"id": "knife",
 			"quantity": 1
 		},
 		{
-			"type": "cuttingTool",
-			"name": "chopper",
+			"id": "onion",
 			"quantity": 1
 		},
 		{
-			"type": "preparableItem",
-			"name": "onion",
+			"id": "tomato",
 			"quantity": 1
 		},
 		{
-			"type": "preparableItem",
-			"name": "tomato",
+			"id": "FryingPan",
 			"quantity": 1
 		},
 		{
-			"type": "container",
-			"name": "pan",
+			"id": "egg",
 			"quantity": 1
 		},
 		{
-			"type": "container",
-			"name": "bowl",
+			"id": "cheese",
 			"quantity": 1
 		},
 		{
-			"type": "usableItem",
-			"name": "egg",
+			"id": "Salt",
 			"quantity": 1
 		},
 		{
-			"type": "usableItem",
-			"name": "cheese",
-			"quantity": 1
-		},
-		{
-			"type": "condiment",
-			"name": "Salt",
-			"quantity": 1
-		},
-		{
-			"type": "condiment",
-			"name": "Pepper",
+			"id": "Pepper",
 			"quantity": 1
 		}
 	],
@@ -58,24 +40,22 @@
 		{
 			"id": "Om01S01",
 			"type": "cut",
-			"terminating": false,
+			"textDescription": "Cut onions",
 			"prereq": "",
 			"optional": false,
 			"skips": "",
 			"items": [
 				{
-					"type": "cuttingTool",
-					"name": "knife",
+					"id": "knife",
 					"quantity": 1
 				},
 				{
-					"type": "preparableItem",
-					"name": "onion",
+					"id": "onion",
 					"quantity": 1
 				}
 			],
 			"finalItem": {
-				"name": "DicedOnions",
+				"id": "DicedOnions",
 				"type": "usableItem",
 				"quantity": 1
 			}
@@ -83,69 +63,61 @@
 		{
 			"id": "Om01S02",
 			"type": "cut",
-			"terminating": false,
+			"textDescription": "Cut tomatoes",
 			"prereq": "",
 			"optional": false,
 			"skips": "",
 			"items": [
 				{
-					"type": "cuttingTool",
-					"name": "chopper",
+					"id": "chopper",
 					"quantity": 1
 				},
 				{
-					"type": "preparableItem",
-					"name": "tomato",
+					"id": "tomato",
 					"quantity": 1
 				}
 			],
 			"finalItem": {
-				"name": "ChoppedTomatoes",
+				"id": "ChoppedTomatoes",
 				"type": "usableItem",
-				"quantity": 1	
+				"quantity": 1
 			}
 		},
 		{
 			"id": "Om01S03",
 			"type": "mix",
-			"terminating": false,
+			"textDescription": "Mix the ingredients: onions, tomatoes, salt, pepper, egg",
 			"prereq": "",
 			"optional": false,
 			"skips": "",
 			"items": [
 				{
-					"type": "container",
-					"name": "pan",
+					"id": "pan",
 					"quantity": 1
 				},
 				{
-					"type": "usableItem",
-					"name": "DicedOnions",
+					"id": "DicedOnions",
 					"quantity": 1
 				},
 				{
-					"type": "usableItem",
-					"name": "ChoppedTomatoes",
+					"id": "ChoppedTomatoes",
 					"quantity": 1
 				},
 				{
-					"type": "condiment",
-					"name": "Salt",
+					"id": "Salt",
 					"quantity": 1
 				},
 				{
-					"type": "condiment",
-					"name": "Pepper",
+					"id": "Pepper",
 					"quantity": 1
 				},
 				{
-					"type": "usableItem",
-					"name": "Egg",
+					"id": "Egg",
 					"quantity": 1
 				}
 			],
 			"finalItem": {
-				"name": "Mixture1",
+				"id": "Mixture1",
 				"type": "usableItem",
 				"quantity": 1
 			}
@@ -153,73 +125,67 @@
 		{
 			"id": "Om01S04",
 			"type": "cook",
-			"terminating": false,
+			"textDescription": "Cook for 3 minutes",
 			"prereq": "",
 			"optional": false,
 			"skips": "",
 			"items": [
 				{
-					"type": "world",
-					"name": "stove",
+					"id": "stove",
 					"quantity": 1
 				},
 				{
-					"type": "usableItem",
-					"name": "mixture1",
+					"id": "mixture1",
 					"quantity": 1
 				}
 			],
-			"finalItem":  {
+			"finalItem": {
 				"name": "Mixture2",
 				"type": "usableItem",
-				"quantity": 1	
+				"quantity": 1
 			}
 		},
 		{
 			"id": "Om01S05",
 			"type": "mix",
-			"terminating": false,
+			"textDescription": "If you want, add cheese",
 			"prereq": "Om01S04",
 			"skips": "",
 			"optional": true,
 			"items": [
 				{
-					"type": "container",
-					"name": "pan",
+					"id": "pan",
 					"quantity": 1
 				},
 				{
-					"type": "usableItem",
-					"name": "cheese",
+					"id": "cheese",
 					"quantity": 1
 				}
 			],
-			"finalItem":  {
-				"name": "Mixture3",
+			"finalItem": {
+				"id": "Mixture3",
 				"type": "usableItem",
-				"quantity": 1	
+				"quantity": 1
 			}
 		},
 		{
 			"id": "Om01S06",
 			"type": "serve",
-			"terminating": true,
+			"textDescription": "Serve flat or folded",
 			"prereq": "Om01S04",
 			"optional": false,
 			"skips": "Om01S05",
 			"items": [
 				{
-					"type": "usableItem",
-					"name": "Mixture2, Mixture3",
+					"naidme": "Mixture2, Mixture3",
 					"quantity": 1
 				}
 			],
-			"finalItem":{
-				"name": "finalItem",
+			"finalItem": {
+				"id": "finalItem",
 				"type": "usableItem",
 				"quantity": 1
 			}
 		}
 	]
-  }
-  
+}

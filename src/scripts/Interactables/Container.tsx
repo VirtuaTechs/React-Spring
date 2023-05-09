@@ -1,7 +1,7 @@
-import Ingredients from "../Ingredients/Ingredients";
-import Interactable from "../Interactable";
+import Ingredients from "./Ingredients";
+import Interactable from "./Interactable";
 
-class Container extends Interactable{
+class Container extends Interactable {
 
 	private itemsList: Ingredients[];
 
