@@ -1,5 +1,12 @@
 import Interactable from "../Interactables/Interactable";
 
+/**
+ * Handling user inventory
+ * 
+ * A class that defined all objects that user has picked up and its operations
+ * 
+ */
+
 class Inventory {
 	private itemsAvaialble: Interactable[];
 	private static instance: Inventory;

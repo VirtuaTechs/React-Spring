@@ -1,3 +1,10 @@
+/**
+ * Defines a data source
+ * 
+ * Base class for data sources
+ * 
+ */
+
 class DataSource {
     constructor() {
 

@@ -1,5 +1,12 @@
 import Interactable from "../Interactables/Interactable";
 
+/**
+ * Concept for places
+ * 
+ * User may need to go to specific places to get particular items
+ * 
+ */
+
 class Place{
 
 	private itemsAvailable: Interactable[];

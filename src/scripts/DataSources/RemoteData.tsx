@@ -1,3 +1,10 @@
+/**
+ * A data source
+ * 
+ * Fetch data after authentication
+ * 
+ */
+
 class RemoteData {
 
 	private authenticatorKey: string;

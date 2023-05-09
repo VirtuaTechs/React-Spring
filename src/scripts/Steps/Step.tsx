@@ -5,6 +5,13 @@ enum stage{
 	start
 }
 
+/**
+ * Base class for Step
+ * 
+ * This class defines the methods that need to be implemented in all child classes
+ * 
+ */
+
 class Step{
 
 	private originalItem: Interactable | undefined;

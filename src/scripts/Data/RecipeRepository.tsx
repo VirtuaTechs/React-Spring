@@ -1,3 +1,9 @@
+/**
+ * Store for repositories
+ * 
+ * This stores all the recipes that are available 
+ * 
+ */
 import Recipe from '../Recipe/Recipe'
 
 class RecipeRepository{

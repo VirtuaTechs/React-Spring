@@ -4,6 +4,13 @@ import Authenticator from "../Utils/Authenticator";
 import Step from "../Steps/Step";
 import Inventory from "../Inventory/Inventory";
 
+/**
+ * Recipe Manager
+ * 
+ * This class manages recipe operations like getting new recipes, storing them, getting list of recipes etc.
+ * 
+ */
+
 class RecipeManager {
 
 	private selectedRecipe: Recipe | undefined;

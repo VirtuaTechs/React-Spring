@@ -2,6 +2,13 @@ import RecipeRepository from "../Data/RecipeRepository";
 import DataSource from "../DataSources/DataSource";
 import Recipe from "../Recipe/Recipe";
 
+/**
+ * Factory to create recipes
+ * 
+ * This class returns recipes either from the database or by creating them from rawData
+ * 
+ */
+
 class RecipeFactory {
 	private static instance: RecipeFactory;
 	private dataSources: DataSource[];
